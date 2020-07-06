@@ -203,10 +203,6 @@ print(now.minute)
 
 check_time = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15,16,17,18,19,20,21,22,23 ]
 
-#result1 =1
-#result2 =1
-
-
 if now.hour in check_time[0 : 23] and now.minute == 34:
     print ('its time to send hourly update as its')
     if result1 == result2:
@@ -223,7 +219,7 @@ if now.hour in check_time[0 : 23] and now.minute == 34:
 
 # Create secure connection with server and send email
         context = ssl.create_default_context()
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
+        with smtplib.SMTP_SSL("<smtpaddress>", <port>, context=context) as server:
             server.login(sender_email, password)
             server.sendmail(
                 sender_email, receiver_email, message.as_string()
